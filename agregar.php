@@ -19,6 +19,7 @@
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-success">Guardar</button>
+                <a href="index.php" class="btn btn-danger">Regresar</a>
             </div>
         </form>
     </div>
