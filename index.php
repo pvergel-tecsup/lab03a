@@ -1,15 +1,18 @@
 <?php
+// Inicializa la sesión o toma la existente
 session_start();
 
-if (!isset($_SESSION['tareas']))
-{
+// Se verifica si existe la variable de sesión tareas
+if (!isset($_SESSION['tareas'])) {
+    // Si no existe, se inicializa como un array vacío
     $_SESSION['tareas'] = [];
 }
 
+// Copiamos la variable de sesión a un array local
 $tareas = $_SESSION['tareas'];
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +22,6 @@ $tareas = $_SESSION['tareas'];
 </head>
 
 <body>
-    
     <div class="container">
         <h1>Mis Tareas</h1>
         <table class="table">
@@ -29,15 +31,15 @@ $tareas = $_SESSION['tareas'];
                 </tr>
             </thead>
             <tbody>
-            <?php
-            for ($i = 0; $i < count($tareas); $i++) 
-            {
-                echo '<tr><td>' . $tareas[$i] . '</td></tr>';
-            }
-            ?>
+                <?php
+                // Se recorre la lista de tareas
+                for ($i = 0; $i < count($tareas); $i++) {
+                    echo '<tr><td>' . $tareas[$i] . '</td></tr>';
+                }
+                ?>
             </tbody>
         </table>
-        <a href="agregar.php" class="btn btn-primary">Agregar Tarea</a>
+        <a href="agregar.html" class="btn btn-primary">Agregar Tarea</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
